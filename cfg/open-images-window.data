@@ -1,0 +1,6 @@
+classes= 1
+train  = /media/fabrice/DATASETS/open-images/yolo-test.txt
+valid  = /media/fabrice/DATASETS/open-images/yolo-val.txt
+names = data/open-images-window.names
+backup = backup
+
