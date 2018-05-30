@@ -2,9 +2,13 @@
 
 DARKNETDIR=$HOME/darknet
 LOGDIR=$HOME/darknet/logs
-LOGFILE=$LOGDIR/$(date +"%s").txt
+TIMESTAMP=$(date +"%s")
+LOGFILE=$LOGDIR/$TIMESTAMP.log
+ERRFILE=$LOGDIR/$TIMESTAMP.err.log
 
 mkdir -p $LOGDIR
 
-$DARKNETDIR/darknet detector train $DARKNETDIR/cfg/open-images-window.data $DARKNETDIR/cfg/yolov2-tiny-window.cfg $DARKNETDIR/weights/darknet19_448.conv.23 2>&1 | tee -a $LOGFILE
+cd $DARKNETDIR
+
+./darknet detector train cfg/open-images-window.data cfg/yolov2-tiny-window.cfg weights/darknet19_448.conv.23 >> $LOGFILE 2>> $ERRFILE
 
