@@ -1,0 +1,6 @@
+classes= 1
+train  = /home/fabrice/darknet/lg2-window-train.txt
+valid  = /home/fabrice/darknet/lg2-window-val.txt
+names = data/window.names
+backup = backup
+
